@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            padding:20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buy These Boxes</h1>
+    <h2>-<br>-<br>-</h2>
+    <div class="boxes">
+        <div class="box" data-id="box12345" data-package="A" data-purchased="0" style="background-color: aqua;">BOX 1</div>
+        <div class="box" data-id="box555555" data-package="B" data-purchased="0" style="background-color: yellow;">BOX 2</div>s
+        <div class="box" data-id="box000000" data-package="C" data-purchased="0" style="background-color: rgb(8, 0, 255);">BOX 3</div>
+    </div>
+
+    
+    <script>
+    document.addEventListener("click", function(event){
+        var boxClicked = event.target;
+        //console.log("event.target", event.target)
+        if (boxClicked.matches(".box")){
+            
+            document.querySelector("h2").innerHTML= "BOX:" + boxClicked.dataset.id + "<br>PACKAGE: " + boxClicked.dataset.package + "<br>" + "PURCHASED";
+            var purchaseCount =  parseInt(boxClicked.dataset.purchased);
+            purchaseCount = purchaseCount + 1;
+            boxClicked.setAttribute("data-purchased", purchaseCount)
+        }
+    })
+    //var someNameEl = document.querySelector("#name");
+    //Getters
+
+    //console.log(someNameEl.dataset.name); //Chris
+    //Setters
+   // someNameEl.dataset.name = "Bob;"
+    </script>
+
+</body>
+</html>

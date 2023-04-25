@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<body>
+    <div id="changeBackground">CLICK ME! (add number)</div>
+    <div id="subtractNumber">Take a number away</div>
+
+    <script>
+        var changeBackgroundEl = document.querySelector("#changeBackground");
+        var subtractNumberEl = document.querySelector("#subtractNumber");
+        var bodyEl = document.querySelector("body");
+
+        var promptValue = prompt("What is your Name?");
+
+        var clickCount = 0;
+        var onButton = false;
+
+        function changeBackgroundFunction(){
+            
+            bodyEl.append(promptValue);
+            
+            clickCount++;
+            changeBackgroundEl.textContent = clickCount;
+            if (onButton){
+                changeBackgroundEl.setAttribute("style", "background-color:white");
+            }
+            else{
+                changeBackgroundEl.setAttribute("style", "background-color:pink");
+            }
+            onButton = !onButton;
+            
+        }
+
+        changeBackgroundEl.addEventListener("click", changeBackgroundFunction);
+        subtractNumberEl.addEventListener("click", function(){
+            clickCount--;
+            changeBackgroundEl.textContent = clickCount;
+        })
+    </script>
+</body>
+</html>

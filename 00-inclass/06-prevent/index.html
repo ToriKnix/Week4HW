@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent</title>
+</head>
+<body>
+    
+<h1>Grocery List</h1>
+<ul id="groceryList"></ul>
+
+<form>
+    <input type="text" id="groceryItem"><br>
+    <button id="submit">Add Grocery Item</button>
+</form>
+
+<script>
+    var groceryListEl = document.querySelector("#groceryList");
+    var submitEl = document.querySelector("#submit");
+
+    submitEl.addEventListener("click", function(e){
+        e.preventDefault();
+        console.log(e);
+        var groceryItemValue = document.querySelector("#groceryItem").value;
+        var item = document.createElement("li");
+        item.textContent = groceryItemValue;
+        groceryListEl.append(item);
+    })
+
+</script>
+
+</body>
+</html>

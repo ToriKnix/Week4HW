@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Listeners</title>
+</head>
+<body>
+    <h1>PRESS ANY KEY</h1>
+    <h2>FIRST NAME</h2>
+    <form> 
+        First Name:<input type="text" id="firstName"><br>
+        Last Name:<input type="text" id="lastName"><br>
+        Have a Pet(s)?<br>
+        <input type="radio" name="hasPets"  id="hasPetsYes">YES | 
+        <input type="radio" name="hasPets" checked id="hasPetsNo">No<br>
+        Have a Car(s)?<br>
+        <input type="radio" name="hasCar" checked id="hasCarYes">YES | 
+        <input type="radio" name="hasCar"  id="hasCarNo">No<br>
+       Agree to Terms<br>
+       <input type="checkbox" name="agreeToterms"  id="agreeToterms">Agree To Terms<br>
+        Favorite Color:
+        <select id="favColor">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </form> 
+
+    <script>
+        var favColorEl = document.querySelector("#favColor");
+        var firstNameEl = document.querySelector("#firstName");
+
+
+        favColorEl.addEventListener("change", function(){
+            alert(favColorEl.value)
+        })
+
+        var h1El = document.querySelector("h1");
+        var h2El = document.querySelector("h2");
+
+        function keyDownAction(event){
+            var keyPress = event.key;
+            h1El.textContent = keyPress;
+        }
+        function keyUpAction(event){
+
+            h1El.textContent = "The " + event.key + " Has been let go. Event Code: " + event.code;
+        }
+
+        firstNameEl.addEventListener("keyup", function(event){
+            h2El.textContent = firstNameEl.value;
+        })
+        document.addEventListener("keyup", keyUpAction)
+        document.addEventListener("keydown", keyDownAction)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Storage</title>
+    <style>
+        .wrapper {
+            display:flex;
+            justify-content:space-between;
+            width:100vw;
+        }
+        section {
+            position: relative;
+            top:0;
+            padding:15px;
+            width:45%;
+            min-height:200px;
+            display: inline-block;
+            border:1px solid black
+        }
+        .inputField {
+            padding:10px;
+            font-size:25px
+        }
+        .inputField input{
+            padding:10px;
+            font-size:25px
+        }
+        label {
+            width:180px
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>User Signup</h1>
+    <div class="wrapper">
+        <section>
+            <div class="inputField">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName">
+            </div>
+            <div class="inputField">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName">
+            </div>
+            <div class="inputField">
+                <label for="userID">User ID</label>
+                <input type="text" id="userID">
+            </div>
+            <div class="inputField">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+            <div class="inputField">
+                <button id="sign-up">Click Here to Register</button>
+            </div>
+        </section>
+        <section>
+            <h2>Last User to Register:</h2>
+            <h3 id="userNameLabel"></h3>
+            <h3 id="userIDlabel"></h3>
+        </section>
+        </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
